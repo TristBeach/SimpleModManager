@@ -3,7 +3,7 @@
     "ModLoader (Package)": {
       "commandName": "MsixPackage"
     },
-    "ModLoader (Unpackaged)": {
+    "SimpleModManager (Unpackaged)": {
       "commandName": "Project"
     }
   }
