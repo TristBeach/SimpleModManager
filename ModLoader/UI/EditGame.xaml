@@ -1,0 +1,36 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<ContentDialog
+    x:Class="SimpleModManager.UI.EditGame"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleModManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Edit Game"
+    PrimaryButtonText="Save"  
+    CloseButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBox Name="TextGameName" Header="Name" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"></TextBox>
+        <TextBox Name="TextGameDirectory" Header="Game Mod Directory" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"></TextBox>
+        <Button Name="ButtonGameDirectoryFolder" Content="..." VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Click="ButtonGameDirectoryFolder_Click"></Button>
+        <TextBox Name="TextModDirectory" Header="Mod Directory" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"></TextBox>
+        <Button Name="ButtonModDirectoryFolder" Content="..." VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Click="ButtonModDirectoryFolder_Click"></Button>
+        <!--<Button Name="ButtonAddGame" Content="Add" Grid.Column="0" Grid.Row="3" Click="ButtonAddGame_Click"></Button>-->
+    </Grid>
+</ContentDialog>

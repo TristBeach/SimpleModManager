@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ModLoader (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ModLoader (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
