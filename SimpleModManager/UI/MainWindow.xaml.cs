@@ -139,14 +139,16 @@ namespace SimpleModManager.UI
             {
                 var relative = System.IO.Path.GetRelativePath(sourceDirectory, directory);
                 var combined = System.IO.Path.Combine(gameDirectory, relative);
-                Directory.CreateDirectory(combined);
+                if(Directory.Exists(directory))
+                    Directory.CreateDirectory(combined);
             }
             var allFiles = Directory.GetFiles(sourceDirectory, "*.*", SearchOption.AllDirectories);
             foreach (string file in allFiles)
             {
                 var relative = System.IO.Path.GetRelativePath(sourceDirectory, file);
                 var combined = System.IO.Path.Combine(gameDirectory, relative);
-                File.Copy(file, combined, true);
+                if(File.Exists(file))
+                    File.Copy(file, combined, true);
             }
         }
 
@@ -157,14 +159,16 @@ namespace SimpleModManager.UI
             {
                 var relative = System.IO.Path.GetRelativePath(sourceDirectory, file);
                 var combined = System.IO.Path.Combine(gameDirectory, relative);
-                File.Delete(combined);
+                if(Directory.Exists(combined))
+                    File.Delete(combined);
             }
             var allDirectories = Directory.GetDirectories(sourceDirectory, "*", SearchOption.AllDirectories);
             foreach (string directory in allDirectories)
             {
                 var relative = System.IO.Path.GetRelativePath(sourceDirectory, directory);
                 var combined = System.IO.Path.Combine(gameDirectory, relative);
-                Directory.Delete(combined, true);
+                if(File.Exists(combined))
+                    Directory.Delete(combined, true);
             }
         }
 
