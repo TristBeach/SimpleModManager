@@ -159,7 +159,7 @@ namespace SimpleModManager.UI
             {
                 var relative = System.IO.Path.GetRelativePath(sourceDirectory, file);
                 var combined = System.IO.Path.Combine(gameDirectory, relative);
-                if(Directory.Exists(combined))
+                if(File.Exists(combined))
                     File.Delete(combined);
             }
             var allDirectories = Directory.GetDirectories(sourceDirectory, "*", SearchOption.AllDirectories);
@@ -167,7 +167,7 @@ namespace SimpleModManager.UI
             {
                 var relative = System.IO.Path.GetRelativePath(sourceDirectory, directory);
                 var combined = System.IO.Path.Combine(gameDirectory, relative);
-                if(File.Exists(combined))
+                if(Directory.Exists(combined))
                     Directory.Delete(combined, true);
             }
         }
